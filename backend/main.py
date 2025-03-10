@@ -98,7 +98,7 @@ def query():
         if file_path:
             file_content = file_path.read()
             temp_file = BytesIO(file_content)  
-            summary = summarize_document(load_document(temp_file)) 
+            ragchat_chain = ragchat_pipeline(temp_file) 
         data = request.json
         query = data.get('query')
         if not query:
