@@ -50,12 +50,6 @@ def translate():
         return jsonify({"error": str(e)}), 500
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
-=======
-file = "C:/Users/Samuel Mesquita/Downloads/CV-Bu6JGepv.pdf"
-ragchat_chain = ragchat_pipeline(file)
-
 UPLOAD_FOLDER = "data"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
@@ -95,7 +89,6 @@ def perform_ocr():
         return jsonify({"message": "OCR processed successfully!", "ocr_result": ocr_response})
     except Exception as e:
         return jsonify({"error": f"OCR processing failed: {str(e)}"}), 500
-
 
 
 @app.route('/ragchat', methods=['POST'])
