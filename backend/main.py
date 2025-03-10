@@ -18,7 +18,7 @@ CORS(app)
 
 
 # Route to summarize a document (file or directory)
-@app.route("/summarize", methods=["POST"])
+@app.route("/summarize", methods=["GET","POST"])
 def summarize():
     file_path = request.files.get("file_path")
 
@@ -34,7 +34,7 @@ def summarize():
 
 
 # Route to translate summarized text
-@app.route("/translate", methods=["POST"])
+@app.route("/translate", methods=["GET","POST"])
 def translate():
     data = request.json
     text = data.get("text")
@@ -55,7 +55,7 @@ def translate():
 UPLOAD_FOLDER = "data"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-@app.route("/upload-image", methods=["POST"])
+@app.route("/upload-image", methods=["GET","POST"])
 def upload_image():
     """Route to handle image uploads from React frontend."""
     if "image" not in request.files:
@@ -93,7 +93,7 @@ def perform_ocr():
         return jsonify({"error": f"OCR processing failed: {str(e)}"}), 500
 
 
-@app.route('/ragchat', methods=['POST'])
+@app.route('/ragchat', methods=["GET","POST"])
 def query():
     try:
         file_path = request.files.get("file_path")
