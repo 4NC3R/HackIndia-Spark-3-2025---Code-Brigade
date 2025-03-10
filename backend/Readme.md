@@ -11,7 +11,7 @@ These are the following routes that we are going to be using for the Project:
 
 - `/ragchat`
   The `/ragchat` route will handle the RAG system that will enable the user to ask questions based on the documents or directories that are uploaded at the frontend. 
-  The Large Language Model that is used in the `ragchat/app.py` file is the Cohere Aya Expanse model.
+  The Large Language Model that is used in the `ragchat/app.py` file is the Cohere Aya Expanse 8 billion model.
 
 - `/summarise`
   The above route is mainly to create a summary of a large section of document that is provided by the user.
