@@ -7,6 +7,7 @@ A short description of the backend.
 ▶️ The `upload_iamge` route handles the operation of taking an image from the user on the front end.
 
 
+
 ⭐ `/perform-ocr`
 
 ▶️ The `/perform_ocr` will perform the operation of Optical Character Recognition on the provided image and display a summary of the text present in the image. 
@@ -14,11 +15,13 @@ A short description of the backend.
 ▶️ We will be implementing the Mistral model for OCR on the image.
 
 
+
 ⭐ `/ragchat`
 
 ▶️ The `/ragchat` route will handle the RAG system that will enable the user to ask questions based on the documents or directories that are uploaded at the frontend. 
 
 ▶️ The Large Language Model that is used in the `ragchat/app.py` file is the Cohere Aya Expanse 8 billion model.
+
 
 
 ⭐ `/summarise`
