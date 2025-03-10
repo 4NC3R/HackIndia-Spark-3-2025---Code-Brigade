@@ -94,6 +94,11 @@ def perform_ocr():
 @app.route('/ragchat', methods=['POST'])
 def query():
     try:
+        file_path = request.files.get("file_path")
+        if file_path:
+            file_content = file_path.read()
+            temp_file = BytesIO(file_content)  
+            summary = summarize_document(load_document(temp_file)) 
         data = request.json
         query = data.get('query')
         if not query:
