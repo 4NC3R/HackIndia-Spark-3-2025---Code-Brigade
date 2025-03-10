@@ -10,6 +10,8 @@ from mistralai import Mistral
 from ragchat.app import ragchat_pipeline, response, encode_image
 from summarise.app import summarize_document, translate_text, load_document
 
+api_key = os.environ["MISTRAL_API_KEY"]
+client = Mistral(api_key=api_key)
 
 app = Flask(__name__)
 CORS(app)
