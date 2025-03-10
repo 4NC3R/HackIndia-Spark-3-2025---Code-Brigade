@@ -1,7 +1,12 @@
+// Landing.jsx
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './landing.css';
+import './LoginForm.css';
 
 function Landing() {
+  const navigate = useNavigate();
+
   return (
     <div className="App">
       <header className="hero">
@@ -11,23 +16,32 @@ function Landing() {
             <ul className="nav-links">
               <li><a href="#features">Features</a></li>
               <li><a href="#benefits">Benefits</a></li>
-              <li><a href="#about">About</a></li>
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
               <li><a href="#contact">Contact</a></li>
             </ul>
-            <button className="cta-button demo-button">Request Demo</button>
+            <button className="cta-button primary" onClick={() => navigate('/login')}>
+              Login
+            </button>
           </nav>
-          
+
           <div className="hero-content">
             <div className="hero-text">
               <h1>AI-Powered Document Search & Retrieval</h1>
               <p>Find exactly what you need, when you need it. Our intelligent assistant understands natural language and provides instant insights from your documents.</p>
               <div className="hero-buttons">
-                <button className="cta-button primary">Get Started</button>
-                <button className="cta-button secondary">Learn More</button>
+                <button className="cta-button demo-button">Discover</button>
+                <button
+                  className="cta-button secondary"
+                  onClick={() => navigate('/login')}
+                >
+                  Login
+                </button>
               </div>
             </div>
             <div className="hero-image">
-              <img src="/api/placeholder/500/400" alt="AI Document Search Illustration" />
+              <video src="" alt="AI Document Search Illustration" />
             </div>
           </div>
         </div>
