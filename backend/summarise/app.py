@@ -7,9 +7,9 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 #Function to split text into chunks
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-def split_text(text, chunk_size=8192, chunk_overlap=100):
+def split_text(text, chunk_size=80000, chunk_overlap=100):
     """
-    Splits a large text into smaller chunks for Cohere summarization.
+    Splits a large text into smaller chunks.
     """
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=chunk_size, chunk_overlap=chunk_overlap
@@ -43,12 +43,11 @@ def load_document(path):
                 loader = Docx2txtLoader(file_path)
             elif file_path.endswith(".pdf"):
                 loader = PyPDFLoader(file_path)
-                #loader = DirectoryLoader(file_path,glob="*.pdf",show_progress=True,loader_cls=PyPDFLoader)
             elif file_path.endswith(".csv"):
-                #loader = CSVLoader(file_path, csv_args={"delimiter": ",", "quotechar": '"'})
                 loader = CSVLoader(file_path)
             elif file_path.endswith(".txt") or file_path.endswith(".md"):
                 loader = TextLoader(file_path,encoding="utf-8")
+            #write code in the else such that it calls the ocr function and the output of the ocr file needs to be sent to the summerizer
             else:
                 print(f"Skipping {file_path} - Unsupported file format.")
                 continue
@@ -93,9 +92,9 @@ def translate_text(text, source_lang, target_lang):
     Translates text using Cohere's 'command' model.
     """
     prompt = f"Translate the following text from {source_lang} to {target_lang}: \n\n{text}\n\nProvide only the translation without explanations."
-
+    
     response = co.generate(
-        model="command", 
+        model="c4ai-aya-expanse-32b", 
         prompt=prompt,
         max_tokens=500,  
         temperature=0.3,  
@@ -103,13 +102,3 @@ def translate_text(text, source_lang, target_lang):
     )
 
     return response.generations[0].text.strip()
-
-
-docs = load_document("C:/Users/TERREL BRAGANCA/Desktop/HackIndia/Files")  # Replace with your directory path or file path
-
-summary = summarize_document(docs) #Summary of the documents
-print("Summary:\n", summary,"\n\n")
-
-
-translated_text = translate_text(summary, "English", "Spanish")
-print("Translated Text:\n", translated_text) #Translated text
