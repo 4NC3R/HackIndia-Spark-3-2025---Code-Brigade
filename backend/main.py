@@ -6,7 +6,6 @@ from io import BytesIO
 from flask import request, jsonify
 import json
 from mistralai import Mistral
-
 from ragchat.app import ragchat_pipeline, response, encode_image
 from summarise.app import summarize_document, translate_text, load_document
 
