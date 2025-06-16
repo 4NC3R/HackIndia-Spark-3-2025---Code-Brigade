@@ -1,11 +1,14 @@
-/* LoginForm.css */
 .login-container {
     max-width: 450px;
-    margin: 2rem auto;
+    margin: 0 auto;
     padding: 2.5rem;
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .login-title {
@@ -71,7 +74,7 @@
     font-size: 1rem;
     font-weight: 600;
     color: #ffffff;
-    background-color: #32409e;
+    background-color: #4299e1;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -80,7 +83,7 @@
 }
 
 .login-form button:hover {
-    background-color: #2a3579;
+    background-color: #3182ce;
     transform: translateY(-1px);
     box-shadow: 0 4px 6px rgba(66, 153, 225, 0.4);
 }
@@ -146,4 +149,11 @@
 .logout-button:active {
     transform: translateY(0);
     box-shadow: 0 1px 3px rgba(229, 62, 62, 0.3);
+}
+
+/* For parent container */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }

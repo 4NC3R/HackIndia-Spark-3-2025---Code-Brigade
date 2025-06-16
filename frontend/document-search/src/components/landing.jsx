@@ -21,7 +21,7 @@ function Landing() {
               </li>
               <li><a href="#contact">Contact</a></li>
             </ul>
-            <button className="cta-button primary" onClick={() => navigate('/login')}>
+            <button className="cta-button demo-button" onClick={() => navigate('/login')}>
               Login
             </button>
           </nav>
@@ -31,7 +31,7 @@ function Landing() {
               <h1>AI-Powered Document Search & Retrieval</h1>
               <p>Find exactly what you need, when you need it. Our intelligent assistant understands natural language and provides instant insights from your documents.</p>
               <div className="hero-buttons">
-                <button className="cta-button demo-button">Discover</button>
+                <button className="cta-button primary">Discover</button>
                 <button
                   className="cta-button secondary"
                   onClick={() => navigate('/login')}

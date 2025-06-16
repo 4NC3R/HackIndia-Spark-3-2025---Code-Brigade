@@ -1,162 +1,105 @@
-/* PromptBox.css */
-.prompt-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
-}
-
-.prompt-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 1.5rem;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.prompt-header h1 {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: #1a365d;
-    margin: 0;
-}
-
-.user-info {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.user-info span {
-    font-weight: 500;
-    color: #4a5568;
-}
-
-.logout-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: #ffffff;
-    background-color: #e53e3e;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.logout-button:hover {
-    background-color: #c53030;
-}
-
-.prompt-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
-}
-
-.main-prompt {
-    grid-column: 1 / -1;
-}
-
-.prompt-card {
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.prompt-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.prompt-card h2 {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #2d3748;
-    margin-top: 0;
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #4299e1;
+/* Add these styles to your existing PromptBox.css */
+.hidden-file-input {
+    display: none;
+  }
+  
+  .custom-file-button {
     display: inline-block;
-}
+    padding: 8px 16px;
+    margin: 10px 0;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+ 
+  .error-container {
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #ffebee;
+    color: #c62828;
+    border-radius: 8px;
+    border: 1px solid #ffcdd2;
+  }
 
-.prompt-textarea {
-    width: 100%;
-    padding: 1rem;
-    border: 1px solid #e2e8f0;
-    border-radius: 6px;
-    font-size: 1rem;
-    color: #2d3748;
-    background-color: #f8fafc;
-    margin-bottom: 1rem;
-    resize: vertical;
-    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
+  .custom-file-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .response-container {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+  }
+  
+  .error-message {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #ffebee;
+    color: #c62828;
+    border-radius: 4px;
+    border-left: 4px solid #c62828;
+  }
+  
+  .response-content {
+    white-space: pre-wrap;
+    line-height: 1.5;
+  }  
 
-.prompt-textarea:focus {
-    outline: none;
-    border-color: #4299e1;
-    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.3);
-}
-
-.button-group {
+  
+  .button-group {
     display: flex;
-    gap: 1rem;
-}
-
-.generate-button, .clear-button {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.875rem;
-    font-weight: 600;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  
+  .button, .generate-button, .clear-button, .logout-button {
+    padding: 8px 16px;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
-}
-
-.generate-button {
-    background-color: #4299e1;
+    transition: background-color 0.3s;
+  }
+  
+  .button:disabled, .generate-button:disabled, .clear-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .generate-button {
+    background-color: #4CAF50;
     color: white;
-    flex: 2;
-}
+  }
+  
+  .generate-button:hover:not(:disabled) {
+    background-color: #45a049;
+  }
+  
+  .clear-button {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .clear-button:hover:not(:disabled) {
+    background-color: #d32f2f;
+  }
+  
+  .button {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  .button:hover:not(:disabled) {
+    background-color: #0b7dda;
+  }
 
-.generate-button:hover {
-    background-color: #3182ce;
-}
-
-.clear-button {
-    background-color: #e2e8f0;
-    color: #4a5568;
-    flex: 1;
-}
-
-.clear-button:hover {
-    background-color: #cbd5e0;
-}
-
-.saved-prompts, .tips-list {
-    padding-left: 0;
-    list-style-type: none;
-}
-
-.saved-prompts li, .tips-list li {
-    padding: 0.75rem;
-    margin-bottom: 0.5rem;
-    border-left: 3px solid #4299e1;
-    background-color: #f8fafc;
-    border-radius: 0 4px 4px 0;
-    color: #4a5568;
-    transition: background-color 0.2s;
-}
-
-.saved-prompts li:hover {
-    background-color: #edf2f7;
-    cursor: pointer;
-}
-
-.tips-list li {
-    border-left-color: #48bb78;
-}
