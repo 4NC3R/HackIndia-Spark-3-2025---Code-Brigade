@@ -4,7 +4,7 @@
 ### Project: AI-Based Document Search & Retrieval Assistant
 
 Overview:
-Imagine a workplace where finding the right document is effortless—no more endless searching through folders, scrolling through lengthy reports, or struggling with exact keyword matches. Traditional search methods often leave employees frustrated, wasting valuable time and delaying important decisions. Our AI-Based Document Search & Retrieval Assistant changes the game by making document retrieval smart, fast, and intuitive. With AI-driven natural language understanding, instant summaries, and multilingual support, accessing information has never been easier.
+Imagine a workplace where finding the right document is effortless—no more endless searching through folders, scrolling through lengthy reports, or struggling with exact keyword matches. Traditional search methods often leave employees frustrated, wasting valuable time and delaying important decisions. Our AI-Based Document Search & Retrieval Assistant changes the game by making document retrieval smart, fast, and intuitive. With AI-driven natural language understanding, instant summaries, and multilingual support, accessing information has never been easier. 
 
 
 ### Challenge
